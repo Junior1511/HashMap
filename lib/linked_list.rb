@@ -85,15 +85,15 @@ class Linked_list
       return nil if current.next_node.nil?
       current = current.next_node
     }
-    return current.value
+    return current
   end
 
-  def index(value)
+  def index(key)
     return nil if @head.nil?
     index = 0
     current = @head
     while current != nil
-      return index if current.value == value
+      return index if current.key == key
       current = current.next_node
       index += 1
     end
@@ -123,4 +123,5 @@ class Linked_list
     end
     current.value
   end
+
 end
