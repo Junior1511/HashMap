@@ -124,4 +124,26 @@ class Linked_list
     current.value
   end
 
+  def delete_node(key)
+    return nil if @head.nil?
+
+    dummy = Node.new(nil, nil, @head)
+    prev = dummy
+    current = @head
+
+    while current != nil
+      if current.key == key
+        prev.next_node = current.next_node
+        
+        @head = dummy.next_node
+        return current.value
+      end
+      
+      prev = current
+      current = current.next_node
+    end
+
+    nil 
+  end
+
 end

@@ -23,7 +23,7 @@ bruh.set('jacket', 'blue')
 bruh.set('kite', 'pink')
 bruh.set('lion', 'golden')
 pp bruh.string
-bruh.delete("dog")
+bruh.delete("lion")
 p "After delete"
 pp bruh.string
 

@@ -62,19 +62,8 @@ class HashMap
 
   def delete(key)
     current = @buckets[hash(key)]
-    if current.contains?(key)
-      deleted_value = current.return_value(key)
-      index_of_key = current.index(key)
-      previous_node = current.at(index_of_key - 1)
-      current = current.at(index_of_key)
-      previous_node.next_node = current.next_node
-      deleted_value
-    else
-      return nil
-    end
-    # okay im definetly gonna end it here for the night but I need to add a condition where
-    # if the thing I am trying to delete is in the first node then I have to work from there
-    # because the first node doesnt have a previous node, but this should be easy actually
+    return nil if current.nil?
+    current.delete_node(key)
   end
 
 end
