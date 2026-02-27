@@ -8,6 +8,7 @@ class HashMap
     @load_factor  = 0.75 
     @capacity = 16
     @buckets = []
+    @size = 0
   end
 
   def set_bucket
@@ -31,11 +32,13 @@ class HashMap
     if current.nil?
       ll = Linked_list.new
       ll.prepend(key, value)
+      @size += 1
       @buckets[(hash(key))] = ll
     else
       if current.contains?(key)
         current.replace_value(key, value)
       else 
+        @size += 1
         current.prepend(key, value)
       end
     end
@@ -63,7 +66,12 @@ class HashMap
   def delete(key)
     current = @buckets[hash(key)]
     return nil if current.nil?
+    @size -= 1
     current.delete_node(key)
+  end
+
+  def length
+    @size
   end
 
 end

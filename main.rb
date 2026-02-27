@@ -22,10 +22,10 @@ bruh.set('ice cream', 'white')
 bruh.set('jacket', 'blue')
 bruh.set('kite', 'pink')
 bruh.set('lion', 'golden')
-pp bruh.string
+bruh.string
 bruh.delete("lion")
-p "After delete"
-pp bruh.string
+bruh.string
+p bruh.length
 
 
 
