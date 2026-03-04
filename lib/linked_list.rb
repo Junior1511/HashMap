@@ -146,4 +146,43 @@ class Linked_list
     nil 
   end
 
+  def get_keys
+    arr = []
+    current = @head
+    arr << current.key if current != nil
+    while current != nil
+      current = current.next_node
+      if current != nil
+        arr << current.key
+      end
+    end
+    arr
+  end
+
+  def get_values
+    arr = []
+    current = @head
+    arr << current.value if current != nil
+    while current != nil
+      current = current.next_node
+      if current != nil
+        arr << current.value
+      end
+    end
+    arr
+  end
+
+  def get_entries
+    arr = []
+    current = @head
+    arr << [current.key, current.value] if current != nil
+    while current != nil
+      current = current.next_node
+      if current != nil
+        arr << [current.key, current.value]
+      end
+    end
+    arr
+  end
+
 end

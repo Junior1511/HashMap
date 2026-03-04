@@ -26,6 +26,10 @@ bruh.string
 bruh.delete("lion")
 bruh.string
 p bruh.length
+p bruh.keys
+p bruh.values
+p bruh.entries
+
 
 
 

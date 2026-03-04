@@ -74,5 +74,40 @@ class HashMap
     @size
   end
 
+  def clear
+    @buckets = []
+    @buckets
+  end
+
+  def keys
+    arr = []
+    @buckets.each do |ll|
+      if ll != nil
+        arr << ll.get_keys
+      end
+    end
+    arr
+  end
+
+  def values
+    arr = []
+    @buckets.each do |ll|
+      if ll != nil
+        arr << ll.get_values
+      end
+    end
+    arr
+  end
+
+  def entries
+    arr = []
+    @buckets.each do |ll|
+      if ll != nil
+        arr << ll.get_entries
+      end
+    end
+    arr
+  end
+
 end
 
